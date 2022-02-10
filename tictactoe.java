@@ -57,6 +57,15 @@ public class TicTacToe extends Canvas {
 
     }
     //columnsIn
+    public static void columnsIn(int board)(String[] args) {
+        for (int[] i:board){
+            for (int c:i){
+                count=count+1;
+            }
+            b=b+1;
+            a=count/b
+        }
+        return a;
 
 
 
