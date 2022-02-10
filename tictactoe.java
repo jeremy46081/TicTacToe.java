@@ -50,7 +50,7 @@ public class TicTacToe extends Canvas {
     public static void rowsIn(int board)(String[] args) {
         int count=0;
         for (int[] i:board){
-            count=count+1
+            count=count+ 1
         }
         return count
 
