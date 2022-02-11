@@ -45,6 +45,7 @@ public class TicTacToe extends Canvas {
         return board;
 
 
+
     }
     //rowsIn
     public static int rowsIn(int[][] board) {
@@ -77,7 +78,8 @@ public class TicTacToe extends Canvas {
         boolean a=true;
         if (board[rows][columns]==EMPTY){
             return true;
-        }else{
+        }
+        else{
             return false;
         }
 
@@ -88,41 +90,88 @@ public class TicTacToe extends Canvas {
 
     }
     //full
-    public static boolean full() {
-        int c=0;
+    public static boolean full(int[][] board) {
+        int c = 0;
         for(int rows=0; rows<board.length;rows=rows+1){
-            for(int columns=0;columns<board.length;columns=columns+1){
-                if (board[rows][columns]!=0){
-                    c=c+1;}
-            }
-        } if (c==0){
-            return false;
 
-        }else{
-            return true;
+            for(int columns=0;columns<board.length;columns=columns+1){
+                if (board[rows][columns]==(EMPTY)){
+                    c=c+1;
+
+                    return false;
+                }
+
+            }
         }
 
-
+        return true;
     }
-    //winInRow
-    public static void wininRow() {
 
+
+
+    //winInRow
+    public static boolean winInRow(int[][] board, int rows, int piece) {
+        int[] a =board[rows];
+        for (int columns=0;columns<a.length-2;columns=columns+1){
+            if(a[columns+2]==piece && a[columns+1]==piece && a[columns]==piece){
+
+                return true;
+
+
+            }
+
+        }
+
+        return false;
     }
     //winInColumn
-    public static void wininColumn() {
+    public static boolean winInColumn(int[][] board, int columns, int piece) {
+        for (int i=0;i<board.length-2;i+=i+1){
 
+            if (board[i+2][columns]==piece && board[i+1][columns]==piece && board[i][columns]==piece){
+                return true;
+
+            }
+        }
+
+        return false;
     }
     //winInDiagonalBS
-    public static void winInDiagonalBS() {
+    public static boolean winInDiagonalBS(int[][] board, int piece) {
+        int count=0;
+        for (int i=0;i<board.length-2;i=i+1){
+            if (board[i+2][count]==piece && board[i+1][count+1]==piece && board[i][count+2]==piece){
+                return true;
 
+            }
+            count=count+1;
+
+        }
+
+        return false;
     }
     //winInDiagonalFS
-    public static void winInDiagonalFS() {
+    public static boolean winInDiagonalFS(int[][] board, int piece) {
+        int count=board.length-1;
+        for (int i=0;i<board.length-2;i=i+1){
+            if (board[i+1][count-1]==piece && board[i][count]==piece && board[i+2][count-2]==piece){
+                return true;
 
+
+
+            }
+            count=count-1;
+
+        }
+
+        return false;
     }
     //hint
-    public static void hint(){
-        
+    public static int[] hint(int[][] board, int piece){
+        int []r = new int[2];
+        r[0]=-1;
+        r[1]=-1;
+        return r;
     }
 
     //The following are completed for you already
