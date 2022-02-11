@@ -40,72 +40,90 @@ public class TicTacToe extends Canvas {
 
     //Put your code here
     //createBoard
-    public static void createBoard(int rows, int columns)(String[] args) {
+    public static int[][] createBoard(int rows, int columns){
         int[][] board=new int [rows][columns];
         return board;
 
 
     }
     //rowsIn
-    public static void rowsIn(int board)(String[] args) {
+    public static int rowsIn(int[][] board) {
         int count=0;
         for (int[] i:board){
-            count=count+1
+            count=count+1;
         }
-        return count
+        return count;
 
 
     }
     //columnsIn
-    public static void columnsIn(int board)(String[] args) {
-        for (int[] i:board){
-            for (int c:i){
-                count=count+1;
+    public static int columnsIn(int[][] board) {
+        int count = 0;
+        int b = 0;
+        int a = 0;
+        for (int[] i : board) {
+            for (int c : i) {
+                count = count + 1;
             }
-            b=b+1;
-            a=count/b
+            b = b + 1;
+            a = count / b;
         }
         return a;
 
 
-
-}
+    }
     //canPlay
-    public static void canPlay(int board,int rows,int columns)(String[] args) {
+    public static boolean canPlay(int[][] board, int rows, int columns){
         boolean a=true;
         if (board[rows][columns]==EMPTY){
-            return true
+            return true;
         }else{
-            return false
+            return false;
         }
 
     }
     //play
-    public static void play(int board, int rows, int columns, int piece) int(String[] args) {
-        board[rows][columns]=piece
+    public static void play(int[][] board, int rows, int columns, int piece) {
+        board[rows][columns]=piece;
 
     }
     //full
-    public static void full(String[] args) {
+    public static boolean full() {
+        int c=0;
+        for(int rows=0; rows<board.length;rows=rows+1){
+            for(int columns=0;columns<board.length;columns=columns+1){
+                if (board[rows][columns]!=0){
+                    c=c+1;}
+            }
+        } if (c==0){
+            return false;
+
+        }else{
+            return true;
+        }
+
 
     }
-    //wininRow
-    public static void wininRow(String[] args) {
+    //winInRow
+    public static void wininRow() {
 
     }
     //winInColumn
-    public static void wininColumn(String[] args) {
+    public static void wininColumn() {
 
     }
     //winInDiagonalBS
-    public static void winInDiagonalBS(String[] args) {
+    public static void winInDiagonalBS() {
 
     }
-    //winInDigonalFS
-    public static void winInDiagonalFS(String[] args) {
+    //winInDiagonalFS
+    public static void winInDiagonalFS() {
 
     }
     //hint
+    public static void hint(){
+        
+    }
 
     //The following are completed for you already
 
