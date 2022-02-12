@@ -80,7 +80,7 @@ public class TicTacToe extends Canvas {
     /**
      * returns no. of columns that the board has
      * @param board the tictactoe board
-     * @return a which is the no. of coulmns
+     * @return a which is the no. of columns
      */
     public static int columnsIn(int[][] board) {
         int count = 0;
@@ -102,8 +102,8 @@ public class TicTacToe extends Canvas {
     /**
      * returns a boolean depending on whether the specific location in the board is EMPTY
      * @param board the tictactoe board
-     * @param rows no. of rows on the board
-     * @param columns no. of columns on the board
+     * @param rows row position on the board
+     * @param columns column postion on the board
      * @return true or false
      */
     public static boolean canPlay(int[][] board, int rows, int columns){
@@ -121,8 +121,8 @@ public class TicTacToe extends Canvas {
     /**
      * plays using the piece and the specific location in the board
      * @param board the tictactoe board
-     * @param rows no. of rows on the board
-     * @param columns no. of columns on the board
+     * @param rows row postion on the board
+     * @param columns column postion on the board
      * @param piece either X or O
      */
     public static void play(int[][] board, int rows, int columns, int piece) {
@@ -160,7 +160,7 @@ public class TicTacToe extends Canvas {
     /**
      * checks if theres a win in any row by checking 3 consecutive X or 0s
      * @param board tictactoe board
-     * @param rows no. of rows on the board
+     * @param rows row postion on the board
      * @param piece either X or O
      * @return boolean
      */
@@ -183,7 +183,7 @@ public class TicTacToe extends Canvas {
     /**
      * checks if theres a win in any column by checking 3 consecutive X or 0s
      * @param board tictactoe board
-     * @param columns no. of columns on the board
+     * @param columns column postion on the board
      * @param piece either X or O
      * @return
      */
