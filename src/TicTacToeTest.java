@@ -136,6 +136,12 @@ class TicTacToeTest {
         int[][] board={{2,3,8},{1,2,6},{3,4,2}};
         int piece=2;
         assertTrue(TicTacToe.winInDiagonalBS(board,piece));
+        int[][] board1={{1,4,8},{4,1,9},{3,8,1},{2,3,4}};
+        int piece1=1;
+        assertTrue(TicTacToe.winInDiagonalBS(board1,piece1));
+        int[][] board2={{2,6,9,4},{12,21,6,4},{31,44,2,4}};
+        int piece2=2;
+        assertFalse(TicTacToe.winInDiagonalBS(board2,piece2));
     }
 
     @Test
@@ -143,6 +149,12 @@ class TicTacToeTest {
         int[][] board={{4,3,2},{1,2,6},{2,4,1}};
         int piece=2;
         assertTrue(TicTacToe.winInDiagonalBS(board,piece));
+        int[][] board1={{0,0,3,2},{1,1,62,0},{0,0,1,8}};
+        int piece1=1;
+        assertFalse(TicTacToe.winInDiagonalBS(board1,piece1));
+        int[][] board2={{2,3,1},{1,1,7},{1,8,9},{0,4,1}};
+        int piece2=1;
+        assertTrue(TicTacToe.winInDiagonalBS(board2,piece2));
     }
 
     @Test

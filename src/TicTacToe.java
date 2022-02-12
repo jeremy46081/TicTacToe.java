@@ -5,6 +5,11 @@ import java.awt.geom.*;
 import java.math.*;
 import java.util.*;
 import java.util.List;
+/**
+ * Jeremy Thomas
+ * 11/02/2022
+ * T07
+ */
 
 /**
  * A Class for a Modified Tic Tac Toe game
@@ -40,6 +45,13 @@ public class TicTacToe extends Canvas {
 
     //Put your code here
     //createBoard
+
+    /**
+     * creates and returns tictactoe board
+     * @param rows The no. of rows on the board
+     * @param columns The no. of columns on the board
+     * @return board
+     */
     public static int[][] createBoard(int rows, int columns){
         int[][] board=new int [rows][columns];
         return board;
@@ -48,6 +60,12 @@ public class TicTacToe extends Canvas {
 
     }
     //rowsIn
+
+    /**
+     * returns no. of rows that the board has
+     * @param board the tictactoe board
+     * @return count i.e the no. of rows
+     */
     public static int rowsIn(int[][] board) {
         int count=0;
         for (int[] i:board){
@@ -58,6 +76,12 @@ public class TicTacToe extends Canvas {
 
     }
     //columnsIn
+
+    /**
+     * returns no. of columns that the board has
+     * @param board the tictactoe board
+     * @return a which is the no. of coulmns
+     */
     public static int columnsIn(int[][] board) {
         int count = 0;
         int b = 0;
@@ -74,6 +98,14 @@ public class TicTacToe extends Canvas {
 
     }
     //canPlay
+
+    /**
+     * returns a boolean depending on whether the specific location in the board is EMPTY
+     * @param board the tictactoe board
+     * @param rows no. of rows on the board
+     * @param columns no. of columns on the board
+     * @return true or false
+     */
     public static boolean canPlay(int[][] board, int rows, int columns){
         boolean a=true;
         if (board[rows][columns]==EMPTY){
@@ -85,11 +117,25 @@ public class TicTacToe extends Canvas {
 
     }
     //play
+
+    /**
+     * plays using the piece and the specific location in the board
+     * @param board the tictactoe board
+     * @param rows no. of rows on the board
+     * @param columns no. of columns on the board
+     * @param piece either X or O
+     */
     public static void play(int[][] board, int rows, int columns, int piece) {
         board[rows][columns]=piece;
 
     }
     //full
+
+    /**
+     * checks if board if full of pieces that are not empty
+     * @param board tictactoe board
+     * @return boolean
+     */
     public static boolean full(int[][] board) {
         int c = 0;
         for(int rows=0; rows<board.length;rows=rows+1){
@@ -110,6 +156,14 @@ public class TicTacToe extends Canvas {
 
 
     //winInRow
+
+    /**
+     * checks if theres a win in any row by checking 3 consecutive X or 0s
+     * @param board tictactoe board
+     * @param rows no. of rows on the board
+     * @param piece either X or O
+     * @return boolean
+     */
     public static boolean winInRow(int[][] board, int rows, int piece) {
         int[] a =board[rows];
         for (int columns=0;columns<a.length-2;columns=columns+1){
@@ -125,6 +179,14 @@ public class TicTacToe extends Canvas {
         return false;
     }
     //winInColumn
+
+    /**
+     * checks if theres a win in any column by checking 3 consecutive X or 0s
+     * @param board tictactoe board
+     * @param columns no. of columns on the board
+     * @param piece either X or O
+     * @return
+     */
     public static boolean winInColumn(int[][] board, int columns, int piece) {
         for (int i=0;i<board.length-2;i+=i+1){
 
@@ -137,6 +199,13 @@ public class TicTacToe extends Canvas {
         return false;
     }
     //winInDiagonalBS
+
+    /**
+     * checks if theres a win in any backwards diagonal by checking 3 consecutive X or 0s
+     * @param board tictactoe board
+     * @param piece either X or O
+     * @return boolean
+     */
     public static boolean winInDiagonalBS(int[][] board, int piece) {
         int count=0;
         for (int i=0;i<board.length-2;i=i+1){
@@ -151,6 +220,13 @@ public class TicTacToe extends Canvas {
         return false;
     }
     //winInDiagonalFS
+
+    /**
+     * checks if theres a win in any forwards diagonal by checking 3 consecutive X or 0s
+     * @param board tictactoe board
+     * @param piece either X or O
+     * @return boolean
+     */
     public static boolean winInDiagonalFS(int[][] board, int piece) {
         int count=board.length-1;
         for (int i=0;i<board.length-2;i=i+1){
@@ -168,10 +244,9 @@ public class TicTacToe extends Canvas {
     }
     //hint
     public static int[] hint(int[][] board, int piece){
-        int []r = new int[2];
-        r[0]=-1;
-        r[1]=-1;
-        return r;
+        int[] a = new int[0];
+
+        return a;
     }
 
     //The following are completed for you already
