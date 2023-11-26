@@ -207,15 +207,15 @@ public class TicTacToe extends Canvas {
      * @return boolean
      */
     public static boolean winInDiagonalBS(int[][] board, int piece) {
-        int count=0;
+        for (int count=0;count<board.length-2;count=count+1){
         for (int i=0;i<board.length-2;i=i+1){
-            if (board[i+2][count]==piece && board[i+1][count+1]==piece && board[i][count+2]==piece){
+            if (board[i][count]==piece && board[i+1][count+1]==piece && board[i+2][count+2]==piece){
                 return true;
 
             }
-            count=count+1;
 
-        }
+
+        }}
 
         return false;
     }
@@ -228,17 +228,17 @@ public class TicTacToe extends Canvas {
      * @return boolean
      */
     public static boolean winInDiagonalFS(int[][] board, int piece) {
-        int count=board.length-1;
+        for (int count=0;count<board.length-2;count=count+1){
         for (int i=0;i<board.length-2;i=i+1){
-            if (board[i+1][count-1]==piece && board[i][count]==piece && board[i+2][count-2]==piece){
+            if (board[i][count+2]==piece && board[i+1][count+1]==piece && board[i+2][count]==piece){
                 return true;
 
 
 
             }
-            count=count-1;
 
-        }
+
+        }}
 
         return false;
     }
