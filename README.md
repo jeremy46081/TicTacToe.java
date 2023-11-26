@@ -11,7 +11,7 @@ Select a difficulty: 0 <br />
 Enter choice of X or O: X<br />
 Human is X.<br />
 Computer is O.<br />
-Enter 'h' for game winning hints or <Enter> for no hints: <br />
+Enter 'h' for game winning hints or (Enter) for no hints: <br />
 Enter G to enter input with mouse, otherwise use shell to play: <br />
 G<br />
 Play a game!<br />
